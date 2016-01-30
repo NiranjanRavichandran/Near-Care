@@ -82,6 +82,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 2 {
             let charVC = ChartsViewController()
+            charVC.currentHospital = hospitalObject
             self.navigationController?.pushViewController(charVC, animated: true)
         }
     }

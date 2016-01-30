@@ -9,16 +9,17 @@
 import Foundation
 
 struct Averages {
-    let avgRateOfMortality: Double?
-    let avgRateOfComplications: Double?
-    let avgPatientExp: Double?
-    let avgMedicareCoverage: Double?
+    let avgRateOfMortality: String?
+    let avgRateOfComplications: String?
+    let avgPatientExp: String?
+    let avgMedicareCoverage: String?
     
     init(jsonResponse: NSDictionary) {
-        self.avgRateOfMortality = jsonResponse["avg_mortality"] as? Double
-        self.avgRateOfComplications = jsonResponse["avg_complication"] as? Double
-        self.avgPatientExp = jsonResponse["avg_experience"] as? Double
-        self.avgMedicareCoverage = jsonResponse["avg_coverage"] as? Double
+        print(jsonResponse["avg_mortality"])
+        self.avgRateOfMortality = jsonResponse["avg_mortality"] as? String
+        self.avgRateOfComplications = jsonResponse["avg_complication"] as? String
+        self.avgPatientExp = jsonResponse["avg_experience"] as? String
+        self.avgMedicareCoverage = jsonResponse["avg_coverage"] as? String
     }
     
 }

@@ -32,9 +32,22 @@ class ConnectionManager {
         
     }
     
-    func getGraphValues(city: String, state: String, type: String, completion: (avg: [Averages])-> Void) {
-        Alamofire.request(.POST, "", parameters: ["city": city, "state": state, "type": type]).responseJSON { (response) -> Void in
-            print(response)
+    func getGraphValues(city: String, state: String, type: String, completion: (avg: Averages?)-> Void) {
+        
+        Alamofire.request(.POST, "http://54.152.22.240/API/average.php", parameters: ["city": city, "state": state, "type": type]).responseJSON { (response) -> Void in
+            
+            if let jsonReponse = response.result.value as? NSDictionary {
+                if let item = jsonReponse["value"] as? [NSDictionary] {
+                    print(item)
+                    if let average: Averages = Averages(jsonResponse: item.first!) {
+                        print(average)
+                        completion(avg: average)
+                    }else {
+                        completion(avg: nil)
+                    }
+                }
+            
+            }
         }
     }
 }

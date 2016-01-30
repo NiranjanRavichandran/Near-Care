@@ -85,7 +85,7 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
                 ConnectionManager.sharedManager.getHospitals(city, state: state, type: currentType) { (success, hospitalList) -> Void in
                     if hospitalList.count > 0 {
                         hospitals = hospitalList
-                        print(hospitals)
+                        
                         self.performSegueWithIdentifier("moveToTabView", sender: self)
                     }
                 }
