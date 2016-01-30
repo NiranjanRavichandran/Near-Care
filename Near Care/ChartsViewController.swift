@@ -55,7 +55,8 @@ class ChartsViewController: UIViewController {
             avgData.append(nextEntry)
         }
         
-        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Name")
+        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: currentHospital?.name)
+        chartDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
         let chartSecondDataSet = BarChartDataSet(yVals: avgData, label: "Average")
         let chartData = BarChartData(xVals: self.factors, dataSets: [chartDataSet, chartSecondDataSet])
         barChartView.data = chartData

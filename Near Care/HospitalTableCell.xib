@@ -46,23 +46,16 @@
                             </mask>
                         </variation>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndx-nw-Sbt">
-                        <rect key="frame" x="113" y="46" width="24" height="24"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="24" id="JDY-6l-fLp"/>
-                            <constraint firstAttribute="width" constant="24" id="Sss-pK-Kk4"/>
-                        </constraints>
-                        <state key="normal" image="location"/>
-                        <connections>
-                            <action selector="opneMaps:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="q9m-Zc-MFU"/>
-                        </connections>
-                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ww-DJ-xTS">
+                        <rect key="frame" x="118" y="48" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="TEZ-Iv-Nro" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="6ku-iq-eXQ"/>
                     <constraint firstAttribute="bottomMargin" secondItem="TEZ-Iv-Nro" secondAttribute="bottom" id="EIU-WU-uTK"/>
-                    <constraint firstItem="ndx-nw-Sbt" firstAttribute="leading" secondItem="C5J-SY-Eyx" secondAttribute="trailing" constant="8" id="INh-1f-Ptu"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="ndx-nw-Sbt" secondAttribute="bottom" constant="1.5" id="MUt-En-3WL"/>
                     <constraint firstItem="TEZ-Iv-Nro" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="MY8-b7-eXD"/>
                     <constraint firstItem="C5J-SY-Eyx" firstAttribute="leading" secondItem="TEZ-Iv-Nro" secondAttribute="trailing" constant="8" id="TrY-Wp-zen"/>
                     <constraint firstItem="C5J-SY-Eyx" firstAttribute="top" secondItem="VcQ-fS-dXo" secondAttribute="bottom" constant="4" id="gNo-So-Uoc"/>
@@ -74,6 +67,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="absRank" destination="1ww-DJ-xTS" id="5lD-mm-lbO"/>
                 <outlet property="hospitalIcon" destination="TEZ-Iv-Nro" id="Qp4-YW-9zq"/>
                 <outlet property="name" destination="VcQ-fS-dXo" id="VgT-h8-Jv6"/>
             </connections>
@@ -81,7 +75,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="location" width="50" height="50"/>
         <image name="phone_filled" width="25" height="25"/>
         <image name="vet" width="167" height="163"/>
     </resources>

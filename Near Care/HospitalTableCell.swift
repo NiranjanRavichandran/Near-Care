@@ -12,6 +12,7 @@ class HospitalTableCell: UITableViewCell {
 
     @IBOutlet var hospitalIcon: UIImageView!
     @IBOutlet var name: UILabel!
+    @IBOutlet var absRank: UILabel!
     
     var hospitalObject: Hospital?
     
@@ -27,6 +28,8 @@ class HospitalTableCell: UITableViewCell {
         }else {
             hospitalIcon.image = UIImage(named: "critical.png")
         }
+        let value = Double(hospitalObject!.absRanValue!)! * 100
+        self.absRank.text = "\(value)%"
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
