@@ -28,6 +28,8 @@ class HospitalTableCell: UITableViewCell {
         }else {
             hospitalIcon.image = UIImage(named: "critical.png")
         }
+        
+        print(hospitalObject?.absRanValue)
         let value = Double(hospitalObject!.absRanValue!)! * 100
         self.absRank.text = "\(value)%"
     }
