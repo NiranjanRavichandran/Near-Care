@@ -8,6 +8,8 @@
 
 import UIKit
 
+let APP_BASE_COLOR = UIColor(red: 74/255, green: 192/255, blue: 149/255, alpha: 1.0)
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,7 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        UINavigationBar.appearance().barTintColor = APP_BASE_COLOR
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Helvetica", size: 25)!]
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
         return true
     }
 
